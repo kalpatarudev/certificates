@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Verification</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #89f7fe, #66a6ff);
+    }
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 350px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    input {
+      width: 90%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 16px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Code Verification</h2>
+    <input type="text" id="studentId" placeholder="Only Certificate — Enter Your Student ID">
+    <br>
+    <button onclick="verify()">Verify</button>
+    <div id="result"></div>
+  </div>
 
+  <script>
+    function verify() {
+      const input = document.getElementById("studentId").value.trim();
+      const result = document.getElementById("result");
+
+      if (input.length > 0) {
+        result.innerHTML = "✅ Your Student ID is Verified";
+      } else {
+        result.innerHTML = "❌ Please enter a Student ID";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
